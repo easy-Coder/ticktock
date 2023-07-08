@@ -1,0 +1,44 @@
+name: ticktok
+description: A new Flutter project.
+publish_to: "none"
+version: 0.1.0
+
+environment:
+  sdk: ">=3.0.2 <4.0.0"
+
+dependencies:
+  camera: ^0.10.5+2
+  flutter:
+    sdk: flutter
+  flutter_riverpod: ^2.3.6
+  flutter_screenutil: ^5.8.4
+  flutter_svg: ^2.0.5
+  go_router: ^9.0.2
+  riverpod_annotation: ^2.1.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+  build_runner: ^2.4.6
+  flutter_gen_runner: ^5.3.1
+  riverpod_generator: ^2.2.3
+  custom_lint: ^0.4.0
+  riverpod_lint: ^1.3.2
+
+flutter_gen:
+  integrations:
+    flutter_svg: true
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/svg/
+
+  fonts:
+    - family: Proxima Nova
+      fonts:
+        - asset: assets/fonts/proxima/ProximaNova-Regular.ttf
+        - asset: assets/fonts/proxima/ProximaNova-Semibold.ttf
+        - asset: assets/fonts/proxima/ProximaNova-Bold.ttf
