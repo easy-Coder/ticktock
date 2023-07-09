@@ -3,8 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 import 'package:ticktok/gen/assets.gen.dart';
-import 'package:ticktok/src/features/profile/presentations/widgets/post_grid.dart';
-import 'package:ticktok/src/features/profile/presentations/widgets/tabbar_header.dart';
+import 'package:ticktok/src/features/account/presentations/profile/widgets/post_grid.dart';
+import 'package:ticktok/src/features/account/presentations/profile/widgets/tabbar_header.dart';
 import 'package:ticktok/src/router/app_router.dart';
 
 class ProfileScreen extends ConsumerStatefulWidget {
@@ -137,25 +137,29 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen>
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
-                      width: 164.w,
-                      height: 44.h,
-                      decoration: ShapeDecoration(
-                        shape: RoundedRectangleBorder(
-                          side: const BorderSide(
-                              width: 0.50, color: Color(0xFFE3E3E4)),
-                          borderRadius: BorderRadius.circular(2),
+                    GestureDetector(
+                      onTap: () =>
+                          context.pushNamed(AppRouter.editProfile.name),
+                      child: Container(
+                        width: 164.w,
+                        height: 44.h,
+                        decoration: ShapeDecoration(
+                          shape: RoundedRectangleBorder(
+                            side: const BorderSide(
+                                width: 0.50, color: Color(0xFFE3E3E4)),
+                            borderRadius: BorderRadius.circular(2),
+                          ),
                         ),
-                      ),
-                      alignment: Alignment.center,
-                      child: Text(
-                        'Edit profile',
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 15.sp,
-                          fontFamily: 'Proxima Nova',
-                          fontWeight: FontWeight.w600,
+                        alignment: Alignment.center,
+                        child: Text(
+                          'Edit profile',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15.sp,
+                            fontFamily: 'Proxima Nova',
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                     ),
