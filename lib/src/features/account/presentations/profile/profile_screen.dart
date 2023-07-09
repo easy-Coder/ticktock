@@ -59,17 +59,10 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen>
             onChanged: (value) {},
           ),
           actions: [
-            // Padding(
-            //   padding: const EdgeInsets.only(right: 8.0),
-            //   child: GestureDetector(
-            //     onTap: () => context.pushNamed(AppRouter.directMessage.name),
-            //     child: Assets.svg.telegram.svg(
-            //         colorFilter:
-            //             const ColorFilter.mode(Colors.black, BlendMode.srcIn)),
-            //   ),
-            // ),
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  context.pushNamed(AppRouter.settings.name);
+                },
                 icon: Icon(
                   Icons.more_horiz,
                   size: 32.w,

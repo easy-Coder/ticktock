@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:ticktok/src/features/account/presentations/edit_profile/edit_profile_screen.dart';
+import 'package:ticktok/src/features/account/presentations/settings/settings_screen.dart';
 import 'package:ticktok/src/features/activity/presentations/activities/activities.dart';
 import 'package:ticktok/src/features/activity/presentations/message/direct_message.dart';
 import 'package:ticktok/src/features/home/presentations/home_root.dart';
@@ -17,7 +18,7 @@ enum AppRouter {
   profile,
   inbox,
   directMessage,
-  editProfile,
+  editProfile, settings,
 }
 
 final GlobalKey<NavigatorState> _rootNavKey = GlobalKey();
@@ -78,6 +79,12 @@ GoRouter goRouter(GoRouterRef ref) {
         name: AppRouter.editProfile.name,
         path: '/edit-profile',
         builder: (context, state) => const EditProfileScreen(),
+      ),
+      GoRoute(
+        parentNavigatorKey: _rootNavKey,
+        name: AppRouter.settings.name,
+        path: '/settings',
+        builder: (context, state) => const SettingsScreen(),
       ),
     ],
   );
