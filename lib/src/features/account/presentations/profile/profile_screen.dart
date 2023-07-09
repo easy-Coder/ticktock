@@ -34,9 +34,12 @@ class _ProfileScreenState extends ConsumerState<ProfileScreen>
           backgroundColor: Colors.white,
           foregroundColor: Colors.black,
           scrolledUnderElevation: 0,
-          leading: Container(
-            margin: EdgeInsets.only(left: 16.w),
-            child: Assets.svg.addAccountIcon.svg(width: 22.w, height: 22.w),
+          leading: GestureDetector(
+            onTap: () => context.pushNamed(AppRouter.findFriends.name),
+            child: Container(
+              margin: EdgeInsets.only(left: 16.w),
+              child: Assets.svg.addAccountIcon.svg(width: 22.w, height: 22.w),
+            ),
           ),
           leadingWidth: 44.w,
           title: DropdownButton(
