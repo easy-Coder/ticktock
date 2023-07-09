@@ -40,19 +40,22 @@ GoRouter goRouter(GoRouterRef ref) {
             parentNavigatorKey: _shellNavKey,
             name: AppRouter.home.name,
             path: '/',
-            builder: (context, state) => const HomeRoot(),
+            pageBuilder: (context, state) =>
+                const NoTransitionPage(child: HomeRoot()),
           ),
           GoRoute(
             parentNavigatorKey: _shellNavKey,
             name: AppRouter.inbox.name,
             path: '/inbox',
-            builder: (context, state) => const ActivitiesScreen(),
+            pageBuilder: (context, state) =>
+                const NoTransitionPage(child: ActivitiesScreen()),
           ),
           GoRoute(
             parentNavigatorKey: _shellNavKey,
             name: AppRouter.profile.name,
             path: '/profile',
-            builder: (context, state) => const ProfileScreen(),
+            pageBuilder: (context, state) =>
+                const NoTransitionPage(child: ProfileScreen()),
           ),
         ],
       ),
